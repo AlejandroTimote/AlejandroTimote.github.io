@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,103 +29,328 @@
           background-color: rgb(75, 168, 75); /* color de fondo al pasar el cursor */
       }
     </style>
-</head>
+  </head>
 
-<body class="container">
-  <audio id="myAudio">
-    <source src="florCompleta.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
-  </audio>
-  <!-- Video de fondo -->
-  <video autoplay muted loop id="video-background">
-    <source src="florShrekClaro.mp4" type="video/mp4">
-    Tu navegador no soporta la reproducción de video.
-  </video>
-  <style>
+  <body class="container">
+    <audio id="myAudio">
+      <source src="florCompleta.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="video-background">
+      <source src="florShrekClaro.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <style>
     .larger-scale {
         transform: scale(1.05);
     }
 </style>
+    <div class="girasol-wrapper">
+      <div class="girasol">
+        <!-- Sombra de pétalos detrás -->
+        <div class="petal-shadow" style="transform: rotate(0deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(30deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(60deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(90deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(120deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(150deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(180deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(210deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(240deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(270deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(300deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal-shadow" style="transform: rotate(330deg);"><div
+            class="petal-inner"></div></div>
+
+        <!-- Pétalos principales -->
+        <div class="petal" style="transform: rotate(0deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(30deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(60deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(90deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(120deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(150deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(180deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(210deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(240deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(270deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(300deg);"><div
+            class="petal-inner"></div></div>
+        <div class="petal" style="transform: rotate(330deg);"><div
+            class="petal-inner"></div></div>
+
+        <!-- Centro -->
+        <div class="center" id="center"></div>
+        <div class="light-particles"></div>
+      </div>
+    </div>
+
+    <div class="floating-girasol" style="left: 5%; top: 0%;">
+      <div class="scale-container">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Girasol flotante derecho -->
+    <div class="floating-girasol reverse" style="right: 5%; top: 0%;">
+      <div class="scale-container">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-girasol" style="left: 15%; top: 22%;">
+      <div class="scale-container" style="transform: scale(0.2);">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Girasol flotante derecho -->
+    <div class="floating-girasol reverse" style="left: 82%; top: 20%;">
+      <div class="scale-container" style="transform: scale(0.18);">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="floating-girasol" style="left: 5%; top: 45%;">
+      <div class="scale-container" style="transform: scale(0.27);">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Girasol flotante derecho -->
+    <div class="floating-girasol reverse" style="left: 95%; top: 32%;">
+      <div class="scale-container" style="transform: scale(0.26);">
+        <div class="girasol-wrapper">
+          <div class="girasol">
+            <!-- Pétalos sombra -->
+            <div class="petal-shadow" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal-shadow" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+            <!-- Pétalos principales -->
+            <div class="petal" style="transform: rotate(0deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(30deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(60deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(90deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(120deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(150deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(180deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(210deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(240deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(270deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(300deg);"><div class="petal-inner"></div></div>
+            <div class="petal" style="transform: rotate(330deg);"><div class="petal-inner"></div></div>
+
+  
+            <!-- Centro con semillas -->
+            <div class="center"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="flowers">
-      <div class="flower flower--1" >
-        <div class="flower__leafs flower__leafs--1">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-          <div class="flower__line__leaf flower__line__leaf--5"></div>
-          <div class="flower__line__leaf flower__line__leaf--6"></div>
-        </div>
-      </div>
-
-      <div class="flower flower--2">
-        <div class="flower__leafs flower__leafs--2">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
-
-      <div class="flower flower--3">
-        <div class="flower__leafs flower__leafs--3">
-          <div class="flower__leaf flower__leaf--1"></div>
-          <div class="flower__leaf flower__leaf--2"></div>
-          <div class="flower__leaf flower__leaf--3"></div>
-          <div class="flower__leaf flower__leaf--4"></div>
-          <div class="flower__white-circle"></div>
-
-          <div class="flower__light flower__light--1"></div>
-          <div class="flower__light flower__light--2"></div>
-          <div class="flower__light flower__light--3"></div>
-          <div class="flower__light flower__light--4"></div>
-          <div class="flower__light flower__light--5"></div>
-          <div class="flower__light flower__light--6"></div>
-          <div class="flower__light flower__light--7"></div>
-          <div class="flower__light flower__light--8"></div>
-
-        </div>
-        <div class="flower__line">
-          <div class="flower__line__leaf flower__line__leaf--1"></div>
-          <div class="flower__line__leaf flower__line__leaf--2"></div>
-          <div class="flower__line__leaf flower__line__leaf--3"></div>
-          <div class="flower__line__leaf flower__line__leaf--4"></div>
-        </div>
-      </div>
 
       <div class="grow-ans" style="--d:1.2s">
         <div class="flower__g-long">
@@ -180,28 +405,36 @@
 
       <div class="grow-ans" style="--d:2.8s">
         <div class="flower__g-front">
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--1">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--2">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--3">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--4">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--5">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--6">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--7">
             <div class="flower__g-front__leaf"></div>
           </div>
-          <div class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
+          <div
+            class="flower__g-front__leaf-wrapper flower__g-front__leaf-wrapper--8">
             <div class="flower__g-front__leaf"></div>
           </div>
           <div class="flower__g-front__line"></div>
@@ -236,7 +469,8 @@
           <div class="leaf leaf--3"></div>
         </div>
       </div>
-      <div class="long-g long-g--0" style="margin-left: -90px; margin-top: -110px !important;">
+      <div class="long-g long-g--0"
+        style="margin-left: -90px; margin-top: -110px !important;">
         <div class="grow-ans" style="--d:3s">
           <div class="leaf leaf--0"></div>
         </div>
@@ -250,7 +484,8 @@
           <div class="leaf leaf--3"></div>
         </div>
       </div>
-      <div class="long-g long-g--0" style="margin-left: -10px; margin-top: -180px !important;">
+      <div class="long-g long-g--0"
+        style="margin-left: -10px; margin-top: -180px !important;">
         <div class="grow-ans" style="--d:3s">
           <div class="leaf leaf--0"></div>
         </div>
@@ -264,7 +499,8 @@
           <div class="leaf leaf--3"></div>
         </div>
       </div>
-      <div class="long-g long-g--0" style="margin-left: 510px; margin-top: -180px !important;">
+      <div class="long-g long-g--0"
+        style="margin-left: 510px; margin-top: -180px !important;">
         <div class="grow-ans" style="--d:3s">
           <div class="leaf leaf--0"></div>
         </div>
@@ -278,7 +514,8 @@
           <div class="leaf leaf--3"></div>
         </div>
       </div>
-      <div class="long-g long-g--0" style="margin-left: 590px; margin-top: -110px !important;">
+      <div class="long-g long-g--0"
+        style="margin-left: 590px; margin-top: -110px !important;">
         <div class="grow-ans" style="--d:3s">
           <div class="leaf leaf--0"></div>
         </div>
@@ -405,6 +642,58 @@
           audio.play();
       }
     </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const seedCount = 280;
+        const goldenAngle = Math.PI * (3 - Math.sqrt(5)); // ≈ 137.5°
+        const radius = 80;
+    
+        document.querySelectorAll('.center').forEach((center) => {
+          const centerX = center.clientWidth / 2;
+          const centerY = center.clientHeight / 2;
+    
+          for (let i = 0; i < seedCount; i++) {
+            const r = Math.sqrt(i / seedCount) * radius;
+            const theta = i * goldenAngle;
+    
+            const x = centerX + r * Math.cos(theta);
+            const y = centerY + r * Math.sin(theta);
+    
+            const seed = document.createElement('div');
+            seed.className = 'seed';
+            seed.style.animationDelay = `${2 + i * 0.005}s`;
+            seed.style.left = `${x - 2}px`; // Ajuste fino
+            seed.style.top = `${y - 2}px`;
+            center.appendChild(seed);
+          }
+        });
+      });
+    </script>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        const centerEl = document.getElementById('center');
+        const wrapper = centerEl.closest('.girasol-wrapper');
+        const particleContainer = wrapper.querySelector('.light-particles');
+    
+        const particleCount = 30; // ajusta según el efecto deseado
+        const radius = 210; // radio desde el centro para que rodee bien
+    
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement('div');
+          particle.classList.add('particle');
+    
+          const angle = (2 * Math.PI / particleCount) * i;
+          const x = Math.cos(angle) * radius;
+          const y = Math.sin(angle) * radius;
+    
+          particle.style.left = `calc(50% + ${x}px)`;
+          particle.style.top = `calc(50% + ${y}px)`;
+          particle.style.animationDelay = `${Math.random() * 2}s`;
+    
+          particleContainer.appendChild(particle);
+        }
+      });
+    </script>    
     <script src="main.js"></script>
   </body>
 </html>
