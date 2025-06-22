@@ -16,7 +16,7 @@ body {
   display: flex;
   gap: 80px;
   perspective: 800px;
-  margin-bottom: -10px; /* mueve las rosas más abajo */
+  margin-bottom: -40px; /* mueve las rosas más abajo */
   z-index: 10;
   position: relative;
 }
