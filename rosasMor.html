@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>MI AMOR HERMOSO💕</title>
+        <link rel="stylesheet" href="rosaAmada.css" />
+    </head>
+    <body onclick="playVideoOnce()" style="cursor: pointer;">
+        <video id="video-fondo" loop>
+            <source src="NuestraHistoria.mp4" type="video/mp4" />
+            Tu navegador no soporta la reproducción de video.
+        </video>
+
+        <div class="cesped-container">
+            <!-- 40 hojas de césped -->
+            <!-- Puedes duplicar fácilmente más si deseas -->
+            <!-- Solo varía la propiedad `left` -->
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: -2.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 0%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 2.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 7.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 10%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 12.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 15%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 17.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 20%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 22.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 25%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 27.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 30%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 32.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 35%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 37.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 40%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 42.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 45%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 47.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 50%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 52.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 55%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 57.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 60%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 62.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 65%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 67.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 70%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 72.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 75%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 77.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 80%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 82.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 85%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 87.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 90%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 92.5%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 95%;" />
+            <img src="hojaCesped.png" class="hoja-cesped" style="left: 97.5%;" />
+        </div>
+
+        <div class="rosas-container">
+            <div class="rosa small"></div>
+            <div class="rosa big"></div>
+            <div class="rosa small"></div>
+        </div>
+
+        <div id="falling-roses-left"></div>
+        <div id="falling-roses-right"></div>
+
+        <div id="falling-leaves-left"></div>
+        <div id="falling-leaves-right"></div>
+
+
+        <script>
+            document.querySelectorAll('.rosa').forEach((rosa, idx) => {
+                const layers = [
+                    { count: 20, size: 1.5, dur: 3, colorStops: ['#e50030', '#99001e'] },
+                    { count: 14, size: 1.0, dur: 2.5, colorStops: ['#d20028', '#88001a'] },
+                    { count: 8,  size: 0.8, dur: 2, colorStops: ['#c10020', '#770017'] },
+                ];
+
+                layers.forEach((layer, li) => {
+                    for (let i = 0; i < layer.count; i++) {
+                        const pet = document.createElement('div');
+                        pet.classList.add('petal', `layer-${li}`);
+                        const angle = (360 / layer.count) * i + (li * 10);
+                        pet.style.setProperty('--angle', `${angle}deg`);
+                        pet.style.setProperty('--scale', layer.size);
+                        pet.style.setProperty('--duration', `${layer.dur}s`);
+                        pet.style.setProperty('--c1', layer.colorStops[0]);
+                        pet.style.setProperty('--c2', layer.colorStops[1]);
+                        rosa.appendChild(pet);
+                    }
+                });
+            });
+        </script>
+        <script>
+            function createFallingRose(side = 'left') {
+                const rose = document.createElement('img');
+                rose.src = 'Rosa.png';
+                rose.className = 'falling-rose';
+
+                const size = Math.floor(Math.random() * (85 - 30 + 1)) + 30;
+                rose.style.width = `${size}px`;
+
+                // Posición aleatoria dentro del contenedor lateral
+                rose.style.left = `${Math.random() * 80}px`;
+                rose.style.animationDuration = `${4 + Math.random() * 2}s`;
+
+                const container = document.getElementById(
+                    side === 'left' ? 'falling-roses-left' : 'falling-roses-right'
+                );
+                container.appendChild(rose);
+
+                // Eliminar después de que caiga
+                setTimeout(() => {
+                    rose.remove();
+                }, 6000);
+            }
+
+            // Ejecutar constantemente
+            setInterval(() => createFallingRose('left'), 1000);
+            setInterval(() => createFallingRose('right'), 1000);
+        </script>
+        <script>
+            function createFallingLeaf(side = 'left') {
+                const leaf = document.createElement('img');
+                leaf.src = 'hojasRosa.png';
+                leaf.className = 'falling-leaf';
+
+                const size = Math.floor(Math.random() * (65 - 25 + 1)) + 25;
+                leaf.style.width = `${size}px`;
+
+                // Posición aleatoria dentro del contenedor lateral
+                leaf.style.left = `${Math.random() * 80}px`;
+                leaf.style.animationDuration = `${5 + Math.random() * 2}s`;
+
+                const container = document.getElementById(
+                    side === 'left' ? 'falling-leaves-left' : 'falling-leaves-right'
+                );
+                container.appendChild(leaf);
+
+                // Eliminar después de que caiga
+                setTimeout(() => {
+                    leaf.remove();
+                }, 7000);
+            }
+
+            // Ejecutar constantemente
+            setInterval(() => createFallingLeaf('left'), 1500);
+            setInterval(() => createFallingLeaf('right'), 1500);
+        </script>
+        <script>
+            function playVideoOnce() {
+                const video = document.getElementById("video-fondo");
+                video.play();
+                document.body.style.cursor = "default";
+                document.body.onclick = null; // solo una vez
+            }
+        </script>
+
+    </body>
+</html>

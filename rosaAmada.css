@@ -1,0 +1,201 @@
+* {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #111;
+  height: 101vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.rosas-container {
+  display: flex;
+  gap: 80px;
+  perspective: 800px;
+  margin-bottom: -10px; /* mueve las rosas más abajo */
+  z-index: 10;
+  position: relative;
+}
+
+.rosa {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  transform-style: preserve-3d;
+  animation: spin 10s linear infinite;
+}
+.rosa.big { transform: scale(1.4); }
+.rosa.small { transform: scale(0.9); }
+
+.petal {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 50px; height: 90px;
+  background: var(--c1);
+  border-radius: 50% 50% 40% 40%;
+  transform-origin: bottom center;
+  transform: translate(-50%, -100%) rotate(var(--angle)) scale(var(--scale));
+  box-shadow: 
+  0 2px 6px rgba(0, 0, 0, 0.3),           /* sombra inferior */
+  inset 0 0 8px rgba(0, 0, 0, 0.25);      /* sombra interna suave */
+  border: 1px solid rgba(0, 0, 0, 0.2);      /* borde muy sutil */
+  background: linear-gradient(to bottom, var(--c1) 30%, var(--c2) 100%);
+  opacity: 0.9;
+  animation: sway var(--duration) ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  0% { transform: translate(-50%, -100%) rotate(calc(var(--angle) - 2deg)) scale(var(--scale)); }
+  100% { transform: translate(-50%, -100%) rotate(calc(var(--angle) + 2deg)) scale(var(--scale)); }
+}
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+/*Seccion Rosas laterales*/
+#falling-roses-left,
+#falling-roses-right {
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+#falling-roses-left {
+  left: 0;
+}
+
+#falling-roses-right {
+  right: 0;
+}
+
+.falling-rose {
+  position: absolute;
+  animation: fall linear forwards;
+  opacity: 0.85;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/*Hojas de rosa*/
+#falling-leaves-left,
+#falling-leaves-right {
+  position: fixed;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 4;
+}
+
+#falling-leaves-left {
+  left: 0;
+}
+
+#falling-leaves-right {
+  right: 0;
+}
+
+.falling-leaf {
+  position: absolute;
+  animation: fall-leaf linear forwards;
+  opacity: 0.8;
+}
+
+@keyframes fall-leaf {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/*Base Cesped*/
+.cesped-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  z-index: 2; /* Asegúrate de que sea menor que el de .rosas-container */
+  transform: translateY(25%);
+}
+
+.hoja-cesped {
+  position: absolute;
+  bottom: 0;
+  width: 78px; /* antes 40px — ahora 20% más grande */
+  height: auto;
+  animation: balancear 3s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+  opacity: 0.9;
+}
+
+.hoja-cesped:nth-child(odd) {
+  animation-duration: 2.5s;
+}
+.hoja-cesped:nth-child(even) {
+  animation-duration: 3.5s;
+}
+.hoja-cesped:nth-child(3n) {
+  animation-delay: 1s;
+}
+.hoja-cesped:nth-child(4n) {
+  animation-delay: 1.5s;
+}
+
+@keyframes balancear {
+  0% {
+    transform: rotate(-5deg) scale(1);
+  }
+  100% {
+    transform: rotate(5deg) scale(1);
+  }
+}
+   
+
+/*Video*/
+#video-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  animation: fadeInVideo 2s ease forwards;
+}
+
+@keyframes fadeInVideo {
+  to {
+    opacity: 1;
+  }
+}
+

@@ -110,6 +110,14 @@ body::before {
   color: #111;
 }
 
+.button-group {
+  display: flex;
+  gap: 20px; /* espacio entre botones */
+  justify-content: center;
+  margin-top: 20px; /* opcional, espacio arriba */
+}
+
+
 /* Partículas flotantes */
 .particle {
   position: absolute;
