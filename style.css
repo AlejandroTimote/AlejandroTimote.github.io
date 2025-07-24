@@ -210,4 +210,89 @@ body::before {
     }
   }
   
-  
+  /*Boton Hamburguesa*/
+  /* Contenedor del menú y botón */
+.menu-container {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001; /* Asegúrate de que sea mayor que el del menú */
+}
+
+/* Botón hamburguesa / cerrar */
+.hamburger {
+  font-size: 30px;
+  cursor: pointer;
+  color: #fff;
+  user-select: none;
+  transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
+  z-index: 1002; /* Muy por encima del menú lateral */
+}
+
+/* Menú lateral oculto por defecto */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 220px;
+  height: 100%;
+  background-color: #222;
+  padding-top: 60px;
+  transition: left 0.4s ease;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* menor que .menu-container y .hamburger */
+}
+
+/* Estilo de la lista del menú */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #444;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.2s;
+}
+
+.side-menu a:hover {
+  color: #f39c12;
+}
+
+/* Cuando el menú está abierto */
+.side-menu.open {
+  left: 0;
+}
+
+/* Animación al pasar el mouse por encima de cada enlace del menú */
+.side-menu li {
+  padding: 15px 20px;
+  border-bottom: 1px solid #444;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.side-menu li:hover {
+  transform: translateX(10px) scale(1.05);
+  background-color: #333;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+  display: block;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.side-menu a:hover {
+  color: #f39c12;
+  text-shadow: 0 0 8px #f39c12;
+}

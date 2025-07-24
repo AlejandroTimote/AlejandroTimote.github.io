@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nuestra Historia 📸</title>
+  <link rel="stylesheet" href="historia.css">
+</head>
+<body>
+
+  <!-- ... -->
+    <div class="gallery-container">
+      <button class="nav-button left" onclick="prevImage()">&#10094;</button>
+
+      <div class="image-frame">
+        <img id="galleryImage" src="nosotrosF/0.png" alt="Nuestra historia" class="fade-img" />
+      </div>
+
+      <button class="nav-button right" onclick="nextImage()">&#10095;</button>
+    </div>
+  <!-- ... -->
+
+
+  <script>
+    const totalImages = 34;
+    let current = 0;
+
+    function showImage(index) {
+      const img = document.getElementById('galleryImage');
+      img.classList.remove('fade-in');
+      void img.offsetWidth; // Forzar reinicio de animación
+      img.src = `nosotrosF/${index}.png`;
+      img.classList.add('fade-in');
+    }
+
+    function nextImage() {
+      current = (current + 1) % totalImages;
+      showImage(current);
+    }
+
+    function prevImage() {
+      current = (current - 1 + totalImages) % totalImages;
+      showImage(current);
+    }
+  </script>
+
+</body>
+</html>

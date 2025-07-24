@@ -10,6 +10,21 @@
 </head>
 <body>
 
+<!-- Botón hamburguesa y menú lateral -->
+<div class="menu-container">
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    ☰
+  </div>
+  <nav id="sideMenu" class="side-menu">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="nuestraHistoria.html">📓 Nuestro Libro</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+
   <div class="greetings">
     <span>H</span>
     <span>O</span>
@@ -72,6 +87,19 @@
       }
     };
   </script>
-  
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      const icon = document.getElementById('hamburger');
+      menu.classList.toggle('open');
+
+      if (menu.classList.contains('open')) {
+        icon.textContent = '✖'; // Cambia a "X"
+      } else {
+        icon.textContent = '☰'; // Vuelve al icono de menú
+      }
+    }
+  </script>
+
 </body>
 </html>
