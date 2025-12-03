@@ -92,3 +92,21 @@ tr:hover {
 .export-btn:hover {
     background: #cc2f6a;
 }
+
+.mensaje-exito {
+    display: none;
+    background: #ffb3cc;
+    color: #a3003b;
+    padding: 12px;
+    text-align: center;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    box-shadow: 0 0 12px rgba(255, 0, 128, 0.3);
+    animation: aparecer 0.2s ease-out;
+}
+
+@keyframes aparecer {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

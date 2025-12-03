@@ -10,6 +10,7 @@
 <body>
 
 <div class="container">
+    <div id="mensajeExito" class="mensaje-exito">Idea agregada con éxito 💖</div>
 
     <h1>Ideas de Detalles 💘</h1>
     <div class="heart">🎁🎁🎁</div>
@@ -93,8 +94,20 @@ function agregarIdea() {
 
         document.getElementById("idea").value = "";
         document.getElementById("descripcion").value = "";
+
+        mostrarMensajeExito();
     })
     .catch(err => alert("Error guardando: " + err));
+}
+
+
+function mostrarMensajeExito() {
+    const msg = document.getElementById("mensajeExito");
+    msg.style.display = "block";
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 2000);
 }
 
 
