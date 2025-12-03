@@ -1,0 +1,94 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #df1836, #ffe4e9);
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+}
+
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 0 25px rgba(255, 0, 85, 0.25);
+    border: 2px solid #ff99b8;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #d72867;
+    margin-bottom: 10px;
+}
+
+.heart {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+label { font-weight: 600; }
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ff0000;
+    background: #fff7fa;
+    font-size: 15px;
+}
+
+button {
+    background: #d72867;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button:hover {
+    background: #b91d55;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: #fff8fb;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th {
+    background: #ff2a2a;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ffd1df;
+}
+
+tr:hover {
+    background: #ffe6ef;
+}
+
+.export-btn {
+    margin-top: 15px;
+    background: #ff3f89;
+}
+
+.export-btn:hover {
+    background: #cc2f6a;
+}
